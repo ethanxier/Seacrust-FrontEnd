@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import logoSeacrust from '/src/assets/logo1.2.svg';
 import logoGoogle from '/src/assets/google.svg';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
@@ -18,7 +19,7 @@ function Login() {
 
   return (
     <div className="wrapper">
-      <img src={logoSeacrust} className="logo" alt="Logo Seacrust" />
+      <a href=""><img src={logoSeacrust} className="logo" alt="Logo Seacrust" /></a>
       <div className="card">
         <div className='judul'>Log In</div>
         <div className="input-container">
@@ -56,7 +57,7 @@ function Login() {
           <img src={logoGoogle} alt="logo google" />
           Login with Google
         </button>
-        <div className="question">Don&apos;t have an account? <a href="">Sign Up</a></div>
+        <div className="question">Don&apos;t have an account? <Link to="/register">Sign Up</Link></div>
       </div>
     </div>
   );

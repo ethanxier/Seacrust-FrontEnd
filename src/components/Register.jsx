@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import logoSeacrust from '/src/assets/logo1.2.svg';
 import logoGoogle from '/src/assets/google.svg';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 function Register() {
@@ -63,7 +64,7 @@ function Register() {
           <img src={logoGoogle} alt="logo google" />
           Sign Up with Google
         </button>
-        <div className="question">have an account? <a href="">Log In</a></div>
+        <div className="question">have an account? <Link to="/login">Log In</Link></div>
       </div>
     </div>
   );

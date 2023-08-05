@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
   
   .wrapper {
@@ -17,6 +17,14 @@ body {
   .logo {
     float: left;
     margin-right: 180px;
+    will-change: filter;
+    transition: filter 300ms, margin-bottom 300ms;
+  }
+
+  .logo:hover {
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.5));
+    margin-bottom: 30px;
+    cursor: pointer;
   }
   
   .card {
@@ -60,6 +68,10 @@ body {
     border: 1px solid rgb(0, 0, 0, 0.4);
     border-radius: 50dvh;
   }
+
+  .input-container input:focus {
+    outline: none;
+  }
   
   /* Forgot password styling */
   .forgot-password {
@@ -94,6 +106,10 @@ body {
     background-color: #1a5276;
   }
 
+  .button:focus {
+    outline: none;
+  }
+
   /* Or styling */
   .or-container {
     color: #ffffff;
@@ -126,8 +142,13 @@ body {
     width: 100%;
   }
 
+  .with-google-button:focus {
+    outline: none;
+  }
+
   .with-google-button:hover {
     background-color: #f1f1f1;
+    border: 1px solid rgb(0, 0, 0, 0.4);
   }
 
   .with-google-button img {
@@ -151,17 +172,8 @@ body {
   }
   
   /* Responsiveness (Optional) */
-  @media (max-width: 400px) {
-    .wrapper {
-      flex-direction: column;
-    }
-  
+  @media (max-width: 1080px) {
     .logo {
-      margin-bottom: 20px;
-    }
-  
-    .card {
-      width: 100%; /* Ubah lebar card agar responsif pada perangkat mobile */
+      display: none;
     }
   }
-  
