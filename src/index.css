@@ -1,3 +1,4 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,10 +26,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  padding: 0;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #ffffff;
 }
 
 h1 {
@@ -39,7 +41,6 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -48,12 +49,31 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #3FABE8;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eaeaea;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3FABE8, #72C1F5);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #1791D6; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -61,7 +81,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #3FABE8;
   }
   button {
     background-color: #f9f9f9;

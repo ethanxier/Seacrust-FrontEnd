@@ -1,0 +1,16 @@
+/* Assuming you have defined styles for .foterBox */
+
+.foterBox {
+    background-color: #3FABE8;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .foterBox p {
+    margin: 0;
+  }
+  
