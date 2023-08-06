@@ -7,7 +7,7 @@ import './Commerce.css'
 
 const NelayanTangkap = () => {
     return (
-        <div className="wrapper">
+        <div className="wrapperMenuPage">
             <NavBar />
             <MapBox menu="Nelayan Tangkap"/>
             <div className="catalog">

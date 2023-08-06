@@ -2,7 +2,7 @@ import gambar1 from "/src/assets/menu/menu1.svg"
 import gambar2 from "/src/assets/menu/menu2.svg"
 import gambar3 from "/src/assets/menu/menu3.svg"
 import gambar4 from "/src/assets/menu/menu4.svg"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import "./Menu.css"
 
 const Menu = () => {

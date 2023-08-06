@@ -7,9 +7,9 @@ import './Commerce.css'
 
 const Konsumen = () => {
     return (
-        <div className="wrapper">
+        <div className="wrapperMenuPage">
             <NavBar />
-            <MapBox menu="Konsumen"/>
+            <MapBox menu="Konsumen" />
             <div className="catalog">
                 <CardProduct />
                 <CardProduct />
