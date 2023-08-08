@@ -10,6 +10,10 @@
     position: fixed; 
     z-index: 100;
   }
+
+  .navbarName {
+    font-weight: bold;
+  }
   
   .logoKiri {
     margin-right: auto;
@@ -72,6 +76,12 @@
     color: #333;
     align-items: center;
     margin-right: 40px;
+  }
+
+  .auth img {
+    width: 50px;
+    margin-left: 20px;
+    border-radius: 50vh;
   }
   
   .auth a {
