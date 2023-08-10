@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import logoGoogle from '/src/assets/logo/google.svg';
-import { Link } from 'react-router-dom';
-import './LoginForm.css';
+import { Link, useNavigate } from 'react-router-dom';
 import { Base } from '../../api/api';
+import Input from "../auth/Input";
+import SubmitButton from "../button/SubmitButton";
+import GoogleButton from '../button/GoogleButton';
 
 const LoginForm = () => {
-  // const nav = useNavigate()
+  const nav = useNavigate()
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +23,7 @@ const LoginForm = () => {
       console.log(res.data)
       window.localStorage.setItem('token', res.data.data.token)
       // window.location.reload()
-      // nav('/')
+      nav('/')
     })
     .catch(err => {
       console.log(err.response.data)
@@ -36,49 +37,45 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleLogin}>
-      <div className="card">
-        <div className='judul'>Log In</div>
-        <div className="input-container">
-            <label htmlFor="username">Email/Username:</label>
-            <input
+      <div className="flex shadow-2xl px-11 py-12 flex-col items-center gap-3 rounded-3xl bg-palleteBlue">
+        <div className='flex items-end self-stretch text-3xl font-semibold text-white'>Log In</div>
+        <Input
+            textLabel={"Username/Email"}
             type="text"
             id="username"
-            placeholder="Enter your email here"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            />
-        </div>
-        <div className="input-container">
-            <label htmlFor="password">Password:</label>
-            <input
+            holder="Enter your email here"
+            handleChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+        <Input
+            textLabel="Password"
             type="password"
             id="password"
-            placeholder="Enter your password here"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            />
+            holder="Enter your password here"
+            handleChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        <div className="flex flex-col px-2  self-stretch">
+          <Link to="" className="text-white text-sm font-inter font-medium leading-5 hover:text-palleteSubmitHover self-stretch text-right" >
+            Forget password?
+          </Link>
+          <div className="flex text-red-600 self-stretch h-2">{message}</div>
         </div>
-        <div className="aboveSubmit">
-          <div className="forgot-password">
-              <a href="">Lupa Password?</a>
-          </div>
-          <div className="message">{message}</div>
+        <SubmitButton 
+          name="LogIn"
+        />
+        <div className="flex items-center gap-2 self-stretch">
+          <div className="flex-grow h-0.5 bg-white mx-2"></div> 
+          <div className="text-white">Or</div> 
+          <div className="flex-grow h-0.5 bg-white mx-2"></div> 
         </div>
-        <button className="button">
-            LogIn
-        </button>
-        <div className="or-container">
-            <div className="line"></div>
-            <div className="or">or</div>
-            <div className="line"></div>
-        </div>
-        <button className="with-google-button" onClick={handleLoginWithGoogle}>
-            <img src={logoGoogle} alt="logo google" />
-            Login with Google
-        </button>
-        <div className="question">Don&apos;t have an account? <Link to="/register">Sign Up</Link></div>
+        <GoogleButton 
+          name="Log In"
+          handler={handleLoginWithGoogle}
+        />
+        <div className="text-center text-white text-sm question">Don&apos;t have an account? <Link to="/register" className='text-palleteSubmit hover:text-palleteSubmitHover'>Sign Up</Link></div>
     </div>
     </form>
   );

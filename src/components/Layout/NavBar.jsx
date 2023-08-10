@@ -8,7 +8,7 @@ import ikon from '/src/assets/ikon/search-icon.svg';
 
 const NavBar = () => {
   const [fullName, setFullName] = useState('');
-  const [profilePhoto, setProfilePhoto] = useState('');
+  const [profilePhoto, setProfilePhoto] = useState('https://i.pinimg.com/originals/e6/02/7d/e6027d483419c08d7b2f5c469a9ab745.jpg');
   const [searchKey, setSearchKey] = useState('');
   const token = window.localStorage.getItem('token');
 
@@ -26,9 +26,10 @@ const NavBar = () => {
       }).then((res) => {
         console.log(res.data)
         setFullName(res.data.data.fullname);
-        setProfilePhoto(res.data.data.profile_photo)
+        // setProfilePhoto(res.data.data.profile_photo)
       }, (err) => {
         console.log(err.response.data)
+        window.localStorage.setItem('token', '')
       });
   };
 
@@ -39,7 +40,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <div className="logoKiri">
-        <Link to="/">
+        <Link to="/" >
           <img src={logoSeacrust} alt="Logo Seacrust" />
         </Link>
       </div>
@@ -58,8 +59,12 @@ const NavBar = () => {
       <div className="auth">
         {fullName ? (
           <>
-            <div className='navbarName'>{fullName}</div>
-            <img src={profilePhoto} alt="profile" />
+            <Link to='/user/profile'>
+              <div className='navbarName'>{fullName}</div>
+              <div className="framePhoto">
+                <img src={profilePhoto} alt="profile" />
+              </div>
+            </Link>
           </>
         ) : (
           <>

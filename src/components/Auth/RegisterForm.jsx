@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import logoGoogle from '/src/assets/logo/google.svg';
 import { Link, useNavigate } from 'react-router-dom';
-import './LoginForm.css';
+import Input from "../auth/Input";
+import SubmitButton from "../button/SubmitButton";
+import GoogleButton from '../button/GoogleButton';
 import { Base } from '../../api/api';
 
 const RegisterForm = () => {
@@ -38,68 +39,60 @@ const RegisterForm = () => {
 
   return (
     <form onSubmit={handleRegister}>
-      <div className="card">
-        <div className='judul'>Sign Up</div>
-        <div className="input-container">
-          <label htmlFor="fullName">Fullname:</label>
-          <input
+      <div className="flex shadow-2xl px-11 py-12 flex-col items-center gap-3 rounded-3xl bg-palleteBlue">
+        <div className='flex items-end self-stretch text-3xl font-semibold text-white'>Sign Up</div>
+        <Input
+            textLabel={"Fullname"}
             type="text"
-            id="fullName"
-            placeholder="Enter your fullname here"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            required
+            id="fullname"
+            holder="Enter your name here"
+            handleChange={(e) => {
+              setFullName(e.target.value);
+            }}
           />
-        </div>
-        <div className="input-container">
-          <label htmlFor="userName">Username:</label>
-          <input
+        <Input
+            textLabel={"Username"}
             type="text"
-            id="userName"
-            placeholder="Enter your username here"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            required
+            id="username"
+            holder="Enter your username here"
+            handleChange={(e) => {
+              setUserName(e.target.value);
+            }}
           />
-        </div>
-        <div className="input-container">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="text"
+        <Input
+            textLabel={"Email"}
+            type="email"
             id="email"
-            placeholder="Enter your email here"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+            holder="Enter your email here"
+            handleChange={(e) => {
+              setEmail(e.target.value);
+            }}
           />
-        </div>
-        <div className="input-container">
-          <label htmlFor="password">Password:</label>
-          <input
+        <Input
+            textLabel="Password"
             type="password"
             id="password"
-            placeholder="Enter your password here"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+            holder="Enter your password here"
+            handleChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
+        <div className="flex flex-col px-2  self-stretch">
+          <div className="flex text-red-600 self-stretch h-2">{message}</div>
         </div>
-        <div className="aboveSubmit">
-          <div className="message">{message}</div>
+        <SubmitButton 
+          name="SignUp"
+        />
+        <div className="flex items-center gap-2 self-stretch">
+          <div className="flex-grow h-0.5 bg-white mx-2"></div> 
+          <div className="text-white">Or</div> 
+          <div className="flex-grow h-0.5 bg-white mx-2"></div> 
         </div>
-        <button className="button">
-          SignUp
-        </button>
-        <div className="or-container">
-          <div className="line"></div>
-          <div className="or">or</div>
-          <div className="line"></div>
-        </div>
-        <button className="with-google-button" onClick={handleRegisterWithGoogle}>
-          <img src={logoGoogle} alt="logo google" />
-          Sign Up with Google
-        </button>
-        <div className="question">have an account? <Link to="/login">Log In</Link></div>
+        <GoogleButton 
+          name="Sign Up"
+          handler={handleRegisterWithGoogle}
+        />
+        <div className="text-center text-white text-sm question">have an account? <Link to="/login" className='text-palleteSubmit hover:text-palleteSubmitHover'>Log In</Link></div>
       </div>
     </form>
   );
