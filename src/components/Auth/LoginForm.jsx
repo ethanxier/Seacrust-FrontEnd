@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Base } from '../../api/api';
-import Input from "../auth/Input";
+import Input from "/src/components/auth/Input";
 import SubmitButton from "../button/SubmitButton";
 import GoogleButton from '../button/GoogleButton';
 
