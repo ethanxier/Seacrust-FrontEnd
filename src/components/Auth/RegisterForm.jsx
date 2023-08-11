@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Input from "./Input";
+import Input from "../input/Input";
 import SubmitButton from "../button/SubmitButton";
 import GoogleButton from '../button/GoogleButton';
 import { Base } from '../../api/api';

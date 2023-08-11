@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Base } from '../../api/api';
-import Input from "./Input";
+import Input from "../input/Input";
 import SubmitButton from "../button/SubmitButton";
 import GoogleButton from '../button/GoogleButton';
+import { Base } from '../../api/api';
 
 const LoginForm = () => {
   const nav = useNavigate()
