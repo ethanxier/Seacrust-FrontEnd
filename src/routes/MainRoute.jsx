@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import Login from '/src/pages/Login';
-import Register from '/src/pages/Register';
+import Login from '/src/pages/auth/Login';
+import Register from '/src/pages/auth/Register';
 import Home from '/src/pages/Home';
-import Konsumen from '/src/pages/Konsumen';
-import Tengkulak from '/src/pages/Tengkulak';
-import Pembudidaya from '/src/pages/Pembudidaya';
-import NelayanTangkap from '/src/pages/NelayanTangkap';
+import Konsumen from '/src/pages/categories/Konsumen';
+import Tengkulak from '/src/pages/categories/Tengkulak';
+import Pembudidaya from '/src/pages/categories/Pembudidaya';
+import NelayanTangkap from '/src/pages/categories/NelayanTangkap';
 import Auth from './Auth';
 import Protected from './Protected';
 

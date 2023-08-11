@@ -1,8 +1,8 @@
-import NavBar from "../components/Layout/NavBar"
-import Footer from "../components/Layout/Footer"
-import MapBox from "../components/Map/MapBox"
-import CardProduct from "../components/Card/CardProduct"
-import './Commerce.css'
+import NavBar from "../../components/Layout/NavBar"
+import Footer from "../../components/Layout/Footer"
+import MapBox from "../../components/Map/MapBox"
+import CardProduct from "../../components/Card/CardProduct"
+// import './Commerce.css'
 
 const NelayanTangkap = () => {
     return (

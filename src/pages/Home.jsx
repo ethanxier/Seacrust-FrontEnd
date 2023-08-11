@@ -5,11 +5,11 @@ import Footer from "../components/Layout/Footer"
 
 const Home = () => {
     return (
-        <div>
+        <div className="flex-col min-w-full">
             <NavBar />
             <Menu />
             <Info />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }
