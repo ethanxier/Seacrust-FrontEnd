@@ -2,12 +2,14 @@ import { Route, Routes } from 'react-router-dom';
 import Login from '/src/pages/auth/Login';
 import Register from '/src/pages/auth/Register';
 import Home from '/src/pages/Home';
-import Konsumen from '/src/pages/categories/Konsumen';
-import Tengkulak from '/src/pages/categories/Tengkulak';
-import Pembudidaya from '/src/pages/categories/Pembudidaya';
-import NelayanTangkap from '/src/pages/categories/NelayanTangkap';
 import Auth from './Auth';
 import Protected from './Protected';
+import Biodata from '../pages/profile/Biodata';
+import Pesanan from '../pages/profile/Pesanan';
+import ProdukSaya from '../pages/profile/ProdukSaya';
+import Riwayat from '../pages/profile/Riwayat';
+import EditProfile from '../pages/profile/EditProfile';
+import Product from '../pages/categories/Product';
 
 const MainRoute = () => {
     return (
@@ -19,11 +21,13 @@ const MainRoute = () => {
           </Route>
             <Route path="/" element={<Home />} />
           <Route element={<Protected />}>
-          <Route path="/" element={<Home />} />
-            <Route path="/konsumen" element={<Konsumen />} />
-            <Route path="/tengkulak" element={<Tengkulak />} />
-            <Route path="/pembudidaya" element={<Pembudidaya />} />
-            <Route path="/nelayan-tangkap" element={<NelayanTangkap />} />
+            <Route path="/user/profile" element={<Biodata />} />
+            <Route path="/user/profile/edit" element={<EditProfile />} />
+            <Route path="/user/pesanan" element={<Pesanan />} />
+            <Route path="/user/product" element={<ProdukSaya />} />
+            <Route path="/user/history" element={<Riwayat />} />
+
+            <Route path="/product/:category" element={<Product />} />
           </Route>
         </Routes>
       </div>

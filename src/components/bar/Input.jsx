@@ -9,10 +9,10 @@ const Input = ({
   }) => {
   
     return (
-        <div className="flex flex-col items-start gap-y-2 self-stretch">
+        <div className="flex flex-col items-start gap-1 sm:gap-y-3 self-stretch">
             <label 
             htmlFor={id}
-            className='self-stretch text-white font-inter text-20 font-medium leading-6'
+            className='self-stretch text-white font-inter text-sm sm:text-xl font-medium leading-6'
             >
             {textLabel}
             </label>
@@ -22,7 +22,7 @@ const Input = ({
                 type={type}
                 id={id}
                 placeholder={holder}
-                className="border-2 xl:w-72 text-sm border-neutral-400 rounded-full py-2 px-3 md:py-3 md:px-4 xl:py-2 bg-white focus:outline-none"
+                className="border-2 w-52 xl:w-72 text-xs sm:text-sm border-neutral-400 rounded-full py-1 px-2 md:py-3 md:px-4 xl:py-2 bg-white focus:outline-none"
                 onChange={handleChange}
             />
         </div>

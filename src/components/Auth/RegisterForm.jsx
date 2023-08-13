@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Input from "../input/Input";
+import Input from "../bar/Input";
 import SubmitButton from "../button/SubmitButton";
 import GoogleButton from '../button/GoogleButton';
 import { Base } from '../../api/api';
@@ -39,8 +39,8 @@ const RegisterForm = () => {
 
   return (
     <form onSubmit={handleRegister}>
-      <div className="flex shadow-2xl px-11 py-12 flex-col items-center gap-3 rounded-3xl bg-palleteBlue">
-        <div className='flex items-end self-stretch text-3xl font-semibold text-white'>Sign Up</div>
+      <div className="flex shadow-2xl px-8 sm:px-11 py-8 sm:py-12 flex-col items-center gap-3 sm:gap-3 rounded-3xl bg-palleteBlue">
+        <div className='flex items-end self-stretch text-xl sm:text-3xl font-semibold text-white'>Sign Up</div>
         <Input
             textLabel={"Fullname"}
             type="text"
@@ -78,21 +78,21 @@ const RegisterForm = () => {
             }}
           />
         <div className="flex flex-col px-2  self-stretch">
-          <div className="flex text-red-600 self-stretch h-2">{message}</div>
+          <div className="flex text-red-600 self-stretch h-2 text-xxs sm:text-xs">{message}</div>
         </div>
         <SubmitButton 
           name="SignUp"
         />
         <div className="flex items-center gap-2 self-stretch">
           <div className="flex-grow h-0.5 bg-white mx-2"></div> 
-          <div className="text-white">Or</div> 
+          <div className="text-xs sm:text-xs text-white">Or</div> 
           <div className="flex-grow h-0.5 bg-white mx-2"></div> 
         </div>
         <GoogleButton 
           name="Sign Up"
           handler={handleRegisterWithGoogle}
         />
-        <div className="text-center text-white text-sm question">have an account? <Link to="/login" className='text-palleteSubmit hover:text-palleteSubmitHover'>Log In</Link></div>
+        <div className="text-center text-white text-xs sm:text-sm question">have an account? <Link to="/login" className='text-palleteSubmit hover:text-palleteSubmitHover'>Log In</Link></div>
       </div>
     </form>
   );

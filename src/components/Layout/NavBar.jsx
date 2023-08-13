@@ -20,7 +20,7 @@ const NavBar = () => {
 
   const getDataUser = async () => {
     // console.log(`Bearer ${token}`)
-    await BaseAPI.get('navbar', {
+    BaseAPI.get('navbar', {
         headers: { Authorization: `Bearer ${token}` },
       }).then((res) => {
         console.log(res.data)
@@ -38,7 +38,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="flex px-3 sm:px-8 justify-center items-center gap-8 sm:gap-12 md:gap-56 self-stretch bg-white shadow-md fixed w-full z-50">
+    <div className="flex py-2 sm:py-0 px-3 sm:px-8 justify-center items-center gap-8 sm:gap-12 md:gap-44 self-stretch bg-white shadow-md fixed w-full z-50">
 
       <div className="flex items-center">
         <Link to="/" className='w-24 md:w-56 items-start'>
@@ -62,19 +62,23 @@ const NavBar = () => {
         </div>
       </div>
 
-      <div className="items-end text-right text-no-underline text-black mx-2 gap-3 flex-1 text-xxs sm:text-base">
+      <div className="text-right text-no-underline text-black mx-1 sm:mx-2 flex-1 text-xxs sm:text-base">
         {fullName ? (
           <>
-            <Link to='/user/profile' className='flex gap-2 sm:gap-5 items-center'>
-              <div className='text-xxxs sm:text-lg font-medium'>{fullName}</div>
-              <div className="h-5 w-5 sm:h-12 sm:w-12 rounded-full overflow-hidden">
-                <img src={profilePhoto} alt="profile" />
+            <Link to='/user/profile' className='flex gap-2 sm:gap-5 items-center self-stretch justify-end'>
+              <div className='text-xxs sm:text-lg font-medium text-right'>{fullName}</div>
+              <div className="w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden justify-end">
+                <img src={profilePhoto} alt="profile"/>
               </div>
             </Link>
           </>
         ) : (
           <>
-            <Link to="/login" className='hover:text-palleteBlue font-medium text-xxs sm:text-base'>Log In</Link> | <Link to="/register" className='hover:text-palleteBlue font-medium text-xxs sm:text-base'>Sign Up</Link>
+            <div className="flex flex-row text-right gap-1 sm:gap-3 justify-end">
+              <Link to="/login" className='hover:text-palleteBlue font-medium text-xxs sm:text-base'>Log In</Link>
+              <div>|</div>
+              <Link to="/register" className='hover:text-palleteBlue font-medium text-xxs sm:text-base'>Sign Up</Link>
+            </div>
           </>
         )}
       </div>
