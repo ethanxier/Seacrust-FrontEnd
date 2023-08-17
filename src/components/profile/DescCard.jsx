@@ -22,7 +22,11 @@ const DescCard = () => {
             console.log(res.data.data);
             const userData = res.data.data;
             setDeskripsi(userData.deskripsi)
-            setFoto('https://i.pinimg.com/originals/e6/02/7d/e6027d483419c08d7b2f5c469a9ab745.jpg')
+            if (userData.profile_photo == "") {
+                setFoto('https://i.pinimg.com/originals/f5/fd/14/f5fd146c41549072d5a7823e31ea8eae.png')
+              } else {
+                setFoto(res.data.data.profile_photo)
+              }
         })
         .catch((err) => {
             console.log(err);
@@ -31,11 +35,12 @@ const DescCard = () => {
 
     useEffect(() => {
         getUserData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [token]);
 
     return (
         <div className="flex flex-row sm:flex-col bg-BGtoBottomProfile sm:bg-none sm:bg-white sm:shadow-md sm:rounded-2xl p-3 sm:p-0 gap-2 sm:gap-0 mt-14 sm:mt-0">
-            <div className="sm:h-72 sm:p-7 w-96 sm:w-72 bg-BGtoBottom overflow-hidden sm:rounded-2xl">
+            <div className="sm:h-72 sm:p-7 w-auto sm:w-72 bg-BGtoBottom overflow-hidden sm:rounded-2xl sm:mb-3">
                 <img src={foto} className='rounded-sm h-24 sm:h-auto'/>
             </div>
             <div className="h-full sm:h-fit box-border">

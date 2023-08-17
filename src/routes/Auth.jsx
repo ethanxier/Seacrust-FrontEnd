@@ -1,10 +1,16 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Navigate, Outlet } from "react-router-dom";
 
-const Auth = () => {
+export const Auth = () => {
   if (window.localStorage.getItem('token')) 
-    return <Navigate to= '/' />
+    return <Navigate to="/" />;
   
-    return <Outlet />
+  return <Outlet />;
 };
 
-export default Auth;
+export const AuthA = () => {
+  if (window.localStorage.getItem('tokenA')) 
+    return <Navigate to="/admin/verif/store" />;
+  
+  return <Outlet />;
+};

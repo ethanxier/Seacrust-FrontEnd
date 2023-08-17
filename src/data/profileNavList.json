@@ -8,11 +8,11 @@
       "path": "/user/pesanan"
     },
     {
-      "name": "Produk Saya",
-      "path": "/user/product"
-    },
-    {
       "name": "Riwayat Pesanan",
       "path": "/user/history"
+    },
+    {
+      "name": "Toko Saya",
+      "path": "/user/store"
     }
   ]

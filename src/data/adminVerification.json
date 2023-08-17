@@ -1,0 +1,10 @@
+[
+    {
+      "name": "verifikasi toko",
+      "path": "/admin/verif/store"
+    },
+    {
+      "name": "verifikasi produk",
+      "path": "/admin/verif/product"
+    }
+  ]

@@ -1,7 +1,7 @@
-import navList from '../../data/profileNavList.json'
+/* eslint-disable react/prop-types */
 import { Link, useLocation } from 'react-router-dom';
 
-const NavbarProfile = () => {
+const NavbarList = ( {navList} ) => {
     let loc = useLocation();
 
     return (
@@ -25,4 +25,4 @@ const NavbarProfile = () => {
     )
 }
 
-export default NavbarProfile
+export default NavbarList

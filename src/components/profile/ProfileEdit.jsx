@@ -30,7 +30,6 @@ const ProfileEdit = () => {
             tanggal_lahir: tanggalLahir,
             domisili: domisili,
             no_whatsapp: noWA,
-            foto: foto,
         }, {
             headers: { Authorization: `Bearer ${token}` },
           })
@@ -58,16 +57,16 @@ const ProfileEdit = () => {
               setdomisili(userData.domisili)
               setnoWA(userData.no_whatsapp)
               setDeskripsi(userData.deskripsi)
-              setfoto('https://i.pinimg.com/originals/e6/02/7d/e6027d483419c08d7b2f5c469a9ab745.jpg')
+              if (userData.profile_photo == "") {
+                setfoto('https://i.pinimg.com/originals/f5/fd/14/f5fd146c41549072d5a7823e31ea8eae.png')
+              } else {
+                setfoto(res.data.data.profile_photo)
+              }
           })
           .catch((err) => {
               console.log(err);
           })
       };
-
-    const handlerFoto = () => {
-
-    }
     
     useEffect(() => {
         getUserData();
@@ -75,7 +74,7 @@ const ProfileEdit = () => {
 
     return(
         <>
-        <DescCardEdit deskripsi={deskripsi} foto={foto} handlerfoto={handlerFoto} handlerdesk={setDeskripsi} />
+        <DescCardEdit deskripsi={deskripsi} foto={foto} handlerfoto={setfoto} handlerdesk={setDeskripsi} />
         <div className="w-full bg-white sm:border sm:rounded-2xl">
             <div className="p-10 flex flex-col sm:flex-row gap-6">
                 <div className="w-full sm:w-1/2 flex flex-col gap-5">

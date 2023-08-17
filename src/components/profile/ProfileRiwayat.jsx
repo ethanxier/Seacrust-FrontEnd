@@ -1,10 +1,10 @@
-import NavbarProfile from "../layout/NavbarProfile"
-
+import NavbarList from "../layout/NavbarList"
+import navList from '../../data/profileNavList.json'
 
 const ProfileRiwayat = () => {
     return(
         <div className="w-full bg-white block sm:border sm:rounded-2xl">
-            <NavbarProfile />
+            <NavbarList navList={navList}/>
         </div>
     )
 }

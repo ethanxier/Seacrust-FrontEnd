@@ -26,7 +26,11 @@ const NavBar = () => {
         console.log(res.data)
         setFullName(res.data.data.fullname);
         // setProfilePhoto(res.data.data.profile_photo)
-        setProfilePhoto('https://i.pinimg.com/originals/e6/02/7d/e6027d483419c08d7b2f5c469a9ab745.jpg')
+        if (res.data.data.profile_photo == "") {
+          setProfilePhoto('https://i.pinimg.com/originals/f5/fd/14/f5fd146c41549072d5a7823e31ea8eae.png')
+        } else {
+          setProfilePhoto(res.data.data.profile_photo)
+        }
       }, (err) => {
         console.log(err.response.data)
         window.localStorage.setItem('token', '')
