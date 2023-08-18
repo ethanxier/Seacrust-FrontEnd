@@ -1,14 +1,18 @@
 [
     {
-      "name": "Konsumen"
+      "nama": "Konsumen",
+      "id": 1
     },
     {
-      "name": "Tengkulak"
+      "nama": "Tengkulak",
+      "id": 2
     },
     {
-      "name": "Pembudidaya"
+      "nama": "Pembudidaya",
+      "id": 3
     },
     {
-      "name": "Nelayan Tangkap"
+      "nama": "Nelayan Tangkap",
+      "id": 4
     }
   ]

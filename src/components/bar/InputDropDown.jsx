@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const InputDaerahDropDown = ({
+const InputDropDown = ({
     textLabel,
     id,
     holder,
@@ -34,4 +34,4 @@ const InputDaerahDropDown = ({
     );
 };
 
-export default InputDaerahDropDown;
+export default InputDropDown;

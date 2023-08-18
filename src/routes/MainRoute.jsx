@@ -14,6 +14,8 @@ import DaftarToko from '../pages/profile/DaftarToko';
 import AdminLoginPage from '../pages/auth/AdminLoginPage';
 import AdminArea from './AdminArea';
 import AdminVerifStorePage from '../pages/admin/AdminVerifStorePage';
+import TambahProduk from '../pages/profile/TambahProduk';
+import AdminVerifProductPage from '../pages/admin/AdminVerifProductPage';
 
 const MainRoute = () => {
     return (
@@ -24,6 +26,7 @@ const MainRoute = () => {
           </Route>
           <Route element={<AdminArea />}>
             <Route path="/admin/verif/store" element={<AdminVerifStorePage />} />
+            <Route path="/admin/verif/product" element={<AdminVerifProductPage />} />
           </Route>
           <Route element={<Auth />}>
             <Route path="/login" element={<Login />} />
@@ -37,6 +40,7 @@ const MainRoute = () => {
             <Route path="/user/history" element={<Riwayat />} />
             <Route path="/user/store" element={<TokoSaya />} />
             <Route path="/user/store/regis" element={<DaftarToko />} />
+            <Route path="/user/store/add-product" element={<TambahProduk />} />
 
             <Route path="/product/:category" element={<Product />} />
           </Route>

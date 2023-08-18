@@ -14,7 +14,7 @@ const Menu = () => {
     return (
         <div className="flex px-3 sm:px-10 pt-16 md:pt-24 justify-center items-center gap-62 self-stretch bg-palleteBlue shadow-inner w-full">
             {data.map((list, index) => {
-                const path = list.name.toLowerCase()
+                const path = list.nama.toLowerCase()
 
             return (
                 <div className="squareMenu" key={index}>

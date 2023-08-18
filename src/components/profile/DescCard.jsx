@@ -39,7 +39,7 @@ const DescCard = () => {
     }, [token]);
 
     return (
-        <div className="flex flex-row sm:flex-col bg-BGtoBottomProfile sm:bg-none sm:bg-white sm:shadow-md sm:rounded-2xl p-3 sm:p-0 gap-2 sm:gap-0 mt-14 sm:mt-0">
+        <div className="flex h-fit sm:flex-col bg-BGtoBottomProfile sm:bg-none sm:bg-white sm:shadow-md sm:rounded-2xl p-3 sm:p-0 gap-2 sm:gap-0 mt-14 sm:mt-0">
             <div className="sm:h-72 sm:p-7 w-auto sm:w-72 bg-BGtoBottom overflow-hidden sm:rounded-2xl sm:mb-3">
                 <img src={foto} className='rounded-sm h-24 sm:h-auto'/>
             </div>

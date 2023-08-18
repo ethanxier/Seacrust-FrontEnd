@@ -1,17 +1,15 @@
 import NavBar from "../../components/Layout/NavBar"
-import DescCard from "../../components/profile/DescCard"
-import ProfileBiodata from "../../components/profile/ProfileBiodata"
+import ProfileTambahProduk from "../../components/profile/ProfileTambahProduk"
 
-const Biodata = () => {
+const TambahProduk = () => {
     return (
         <div className="w-full min-h-screen flex flex-col bg-BGGrey bg-fixed">
             <NavBar />
             <div className="gap-0 sm:gap-10 w-full flex sm:mt-32 justify-left sm:px-52 flex-col sm:flex-row box-border">
-                <DescCard />
-                <ProfileBiodata />
+                <ProfileTambahProduk />
             </div>
         </div>
     )
 }
 
-export default Biodata
+export default TambahProduk

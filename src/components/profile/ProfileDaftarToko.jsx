@@ -5,7 +5,7 @@ import InputProfile from "../bar/InputProfile";
 import SubmitButton from "../button/SubmitButton";
 import { useNavigate  } from "react-router";
 import { Link } from "react-router-dom";
-import InputDaerahDropDown from "../bar/InputDaerahDropDown";
+import InputDropDown from "../bar/InputDropDown";
 
 
 const ProfileDaftarToko = () => {
@@ -147,7 +147,7 @@ const ProfileDaftarToko = () => {
                     />
                 </div>
                 <div className="w-full sm:w-1/2 flex flex-col gap-5">
-                    <InputDaerahDropDown
+                    <InputDropDown
                         required
                         textLabel={"Provinsi"}
                         id={"provinsi"}
@@ -160,7 +160,7 @@ const ProfileDaftarToko = () => {
                         }}
                         options={provinsiOptions}
                     />
-                    <InputDaerahDropDown
+                    <InputDropDown
                         required
                         textLabel={"Kota/Kabupaten"}
                         id={"kota"}
@@ -172,7 +172,7 @@ const ProfileDaftarToko = () => {
                         }}
                         options={kotaOptions}
                     />
-                    <InputDaerahDropDown
+                    <InputDropDown
                         required
                         textLabel={"Kecamatan"}
                         id={"kecamatan"}
@@ -183,7 +183,7 @@ const ProfileDaftarToko = () => {
                         }}
                         options={kecamatanOptions}
                     />
-                    <InputDaerahDropDown
+                    <InputDropDown
                         textLabel={"Desa/Kelurahan"}
                         id={"desa"}
                         text={desa[2]}

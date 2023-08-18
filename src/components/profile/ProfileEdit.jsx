@@ -36,7 +36,7 @@ const ProfileEdit = () => {
         .then((res) => {
             console.log(res.data)
             nav('/user/profile')
-            window.location.reload();
+            window.location.reload()
         })
         .catch((err) => {
             console.log(err);
