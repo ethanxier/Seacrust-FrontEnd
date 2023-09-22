@@ -20,6 +20,7 @@ export default {
       },
       backgroundColor: {
         'BGGrey': '#F3F2F2',
+        'BGCutter': 'rgba(255, 255, 255, 0.7)'
       },
       fontFamily: {
         inter: 'Inter'

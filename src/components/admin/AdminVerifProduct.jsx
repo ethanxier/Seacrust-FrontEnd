@@ -85,7 +85,7 @@ const AdminVerifProduct = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="bbot">
+                                        <div className="overflow-x-auto">
                                             {list.deskripsi}
                                         </div>
                                     </div>

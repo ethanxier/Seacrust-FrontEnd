@@ -1,21 +1,22 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Input from "../bar/Input";
-import SubmitButton from "../button/SubmitButton";
-import GoogleButton from '../button/GoogleButton';
-import { Base } from '../../api/api';
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import Input from "../bar/Input"
+import SubmitButton from "../button/SubmitButton"
+import GoogleButton from '../button/GoogleButton'
+import { Base } from '../../api/api'
+// import { auth } from './firebase'
 
 const RegisterForm = () => {
   const nav = useNavigate()
 
-  const [fullName, setFullName] = useState('');
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const [fullName, setFullName] = useState('')
+  const [userName, setUserName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleRegister = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     Base.post('/user/register', {
       fullname: fullName,
@@ -25,17 +26,26 @@ const RegisterForm = () => {
     })
     .then(res => {
       console.log(res.data)
-      nav("/login");
+      nav("/login")
     })
     .catch(err => {
       console.log(err.response.data)
       setMessage(err.response.data.message)
-    });
-  };
+    })
+  }
 
   const handleRegisterWithGoogle = () => {
-    console.log('SignUp with Google');
-  };
+    // const provider = new firebase.auth.GoogleAuthProvider();
+    // auth.signInWithPopup(provider)
+    // .then((result) => {
+    //   // Handle login success
+    //   console.log('User signed in:', result.user);
+    // })
+    // .catch((error) => {
+    //   // Handle login error
+    //   console.error('Error signing in with Google:', error);
+    // });
+  }
 
   return (
     <form onSubmit={handleRegister}>
@@ -47,7 +57,7 @@ const RegisterForm = () => {
             id="fullname"
             holder="Enter your name here"
             handleChange={(e) => {
-              setFullName(e.target.value);
+              setFullName(e.target.value)
             }}
           />
         <Input
@@ -56,7 +66,7 @@ const RegisterForm = () => {
             id="username"
             holder="Enter your username here"
             handleChange={(e) => {
-              setUserName(e.target.value);
+              setUserName(e.target.value)
             }}
           />
         <Input
@@ -65,7 +75,7 @@ const RegisterForm = () => {
             id="email"
             holder="Enter your email here"
             handleChange={(e) => {
-              setEmail(e.target.value);
+              setEmail(e.target.value)
             }}
           />
         <Input
@@ -74,7 +84,7 @@ const RegisterForm = () => {
             id="password"
             holder="Enter your password here"
             handleChange={(e) => {
-              setPassword(e.target.value);
+              setPassword(e.target.value)
             }}
           />
         <div className="flex flex-col px-2  self-stretch">
@@ -95,7 +105,7 @@ const RegisterForm = () => {
         <div className="text-center text-white text-xs sm:text-sm question">have an account? <Link to="/login" className='text-palleteSubmit hover:text-palleteSubmitHover'>Log In</Link></div>
       </div>
     </form>
-  );
+  )
 }
 
-export default RegisterForm;
+export default RegisterForm

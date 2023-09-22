@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import navList from '../../data/profileNavList.json'
 
 const ProfileTokoSaya = () => {
-    const [toko, setToko] = useState([])
+    const [toko, setToko] = useState()
     const token = window.localStorage.getItem('token')
 
     const GetToko = () => {
@@ -13,24 +13,24 @@ const ProfileTokoSaya = () => {
             headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
-            console.log(res.data.data);
-            const dataToko = res.data.data;
+            console.log(res.data.data)
+            const dataToko = res.data.data
             setToko(dataToko)
         })
         .catch((err) => {
-            console.log(err);
+            console.log(err)
         })
     }
 
     useEffect(() => {
-        GetToko();
+        GetToko()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [token]);
+    }, [token])
 
     return(
         <div className="w-full flex flex-col bg-white sm:border sm:rounded-2xl">
             <NavbarProfile navList={navList}/>
-            {toko.length === 0 ? (
+            {toko && toko.length === 0 ? (
                 <div className=" flex flex-col h-full justify-center items-center gap-3">
                     <div className="text-xl font-semibold text-gray-400">
                     ANDA BELUM MEMILIKI TOKO
@@ -39,7 +39,7 @@ const ProfileTokoSaya = () => {
                 </div>
             ) : (
                 <>
-                    {toko.is_active ? (
+                    {toko && toko.is_active ? (
                         <div className="w-full flex flex-col h-full">
                             <div className="w-full flex flex-row bg-palleteBlue p-4 text-xl font-semibold">
                                 <div className="nama text-white flex-1">{toko.name}</div>

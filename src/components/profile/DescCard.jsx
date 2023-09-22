@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BaseAPI } from "../../api/api";
+import { DefaultPhotoProfile } from '../../data/DefaultItem';
 
 const DescCard = () => {
     const nav = useNavigate()
@@ -23,7 +24,7 @@ const DescCard = () => {
             const userData = res.data.data;
             setDeskripsi(userData.deskripsi)
             if (userData.profile_photo == "") {
-                setFoto('https://i.pinimg.com/originals/f5/fd/14/f5fd146c41549072d5a7823e31ea8eae.png')
+                setFoto(DefaultPhotoProfile)
               } else {
                 setFoto(res.data.data.profile_photo)
               }
